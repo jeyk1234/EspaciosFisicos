@@ -1,0 +1,15 @@
+ec\edu\espe\arquitectura\espacios\model\FranjaHoraria_.class
+ec\edu\espe\arquitectura\espacios\model\Ubicacion.class
+ec\edu\espe\arquitectura\espacios\model\Horario_.class
+ec\edu\espe\arquitectura\espacios\model\Horario.class
+ec\edu\espe\arquitectura\espacios\dao\UbicacionFacade.class
+ec\edu\espe\arquitectura\espacios\NewSessionBean.class
+ec\edu\espe\arquitectura\espacios\dao\HorarioFacade.class
+ec\edu\espe\arquitectura\espacios\dao\AbstractFacade.class
+ec\edu\espe\arquitectura\espacios\services\HorarioService.class
+ec\edu\espe\arquitectura\espacios\dao\FranjaHorariaFacade.class
+ec\edu\espe\arquitectura\espacios\model\FranjaHoraria.class
+ec\edu\espe\arquitectura\espacios\services\FranjaHorariaService.class
+ec\edu\espe\arquitectura\espacios\services\UbicacionService.class
+ec\edu\espe\arquitectura\espacios\model\Ubicacion_.class
+ec\edu\espe\arquitectura\util\JsonDateSerializer.class
