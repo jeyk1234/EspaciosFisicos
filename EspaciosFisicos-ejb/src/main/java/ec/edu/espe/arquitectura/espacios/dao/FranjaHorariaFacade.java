@@ -6,10 +6,12 @@
 package ec.edu.espe.arquitectura.espacios.dao;
 
 import ec.edu.espe.arquitectura.espacios.model.FranjaHoraria;
+import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -29,5 +31,13 @@ public class FranjaHorariaFacade extends AbstractFacade<FranjaHoraria> {
     public FranjaHorariaFacade() {
         super(FranjaHoraria.class);
     }
-    
+
+    public List<FranjaHoraria> obtenerTodosDia(String dia) {
+        Query q;
+        q = this.em.createQuery("SELECT obj FROM FranjaHoraria obj WHERE obj.dia = ?1");
+        q.setParameter(1, dia);
+        return q.getResultList();
+
+    }
+
 }

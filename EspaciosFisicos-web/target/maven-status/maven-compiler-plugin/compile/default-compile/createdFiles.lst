@@ -1,0 +1,5 @@
+ec\edu\espe\arquitectura\espacios\ws\Configuracion.class
+ec\edu\espe\arquitectura\espacios\ws\HorarioRest.class
+ec\edu\espe\arquitectura\filter\ResponseCorsFilter.class
+ec\edu\espe\arquitectura\espacios\ws\FranjaRest.class
+ec\edu\espe\arquitectura\espacios\ws\UbicacionRest.class

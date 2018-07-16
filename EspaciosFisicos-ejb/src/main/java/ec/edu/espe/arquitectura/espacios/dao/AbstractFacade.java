@@ -36,12 +36,13 @@ public abstract class AbstractFacade<T> {
 
     public T  edit(T entity) {
         try {
+            System.out.println("EDITOOOOOOO");
             return getEntityManager().merge(entity);
         } catch (ConstraintViolationException e) {
             // Aqui tira los errores de constraint
             for (ConstraintViolation actual : e.getConstraintViolations()) {
                 System.out.println(actual.toString());
-            }
+            } 
         }
 
         return null;

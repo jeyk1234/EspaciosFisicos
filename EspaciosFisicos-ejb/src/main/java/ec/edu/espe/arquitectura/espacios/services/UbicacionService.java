@@ -7,8 +7,10 @@ package ec.edu.espe.arquitectura.espacios.services;
 
 
 import ec.edu.espe.arquitectura.espacios.dao.UbicacionFacade;
+import ec.edu.espe.arquitectura.espacios.model.Horario;
 import ec.edu.espe.arquitectura.espacios.model.Ubicacion;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
@@ -36,7 +38,7 @@ public class UbicacionService {
     {
         List<Ubicacion> a= new ArrayList<>();
         a = ubicacionFacade.findAll();
-        String code="U"+(Integer.parseInt(a.get(a.size()-1).getCodUbicacion().substring(1))+1);
+        String code="U-"+(this.cod()+1);
         u.setCodUbicacion(code);
         ubicacionFacade.create(u);
     }
@@ -45,14 +47,37 @@ public class UbicacionService {
     {
        return  ubicacionFacade.obtenerPorPadre(codPadre);
     }
+    public Integer eliminar(Ubicacion u)
+    {
+        if(ubicacionFacade.obtenerPorPadre(u.getCodUbicacion()).size()>0)
+            return 0;
+        else
+        {
+            this.ubicacionFacade.remove(u);
+            return 1;
+        }
+    }
     public void modificar(Ubicacion u)
     {
         
-        this.ubicacionFacade.modif(u);
+        this.ubicacionFacade.edit(u);
     }
     public Ubicacion buscar(String c)
     {
         return this.ubicacionFacade.find(c);
+    }
+    
+    public Integer cod( )
+    {
+        List<Integer> as= new ArrayList<>();
+        List<Ubicacion>u= this.ubicacionFacade.findAll();
+        for(Ubicacion b: u)
+        {
+            String c= b.getCodUbicacion().split("-")[1];
+            as.add(Integer.parseInt(c));
+        }
+        Collections.sort(as);
+        return as.get(as.size()-1);
     }
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")

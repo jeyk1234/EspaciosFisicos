@@ -37,4 +37,18 @@ public class HorarioFacade extends AbstractFacade<Horario> {
           System.out.println(codNrc);
         return q.getResultList();
     }
+    
+     public List<Horario> verificarHorario(String codFranja, String codUbicacion, String codPeriodo) {
+        Query q = this.em.createQuery("SELECT obj FROM Horario obj WHERE obj.codFranjaMatricula = ?1 AND obj.codUbicacion=?2 AND obj.codPeriodo=?3");
+        q.setParameter(1, codFranja);
+        q.setParameter(2, codUbicacion);
+        q.setParameter(3, codPeriodo);
+        return q.getResultList();
+    }
+    
+     public Integer eliminarTodos(String codNrc)
+     {
+       Query query = this.em.createQuery("DELETE FROM Horario c WHERE c.codNrc = ?1");
+          return query.setParameter(1, codNrc).executeUpdate();  
+     }
 }

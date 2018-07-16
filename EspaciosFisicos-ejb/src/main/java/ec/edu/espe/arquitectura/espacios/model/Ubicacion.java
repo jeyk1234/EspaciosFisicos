@@ -34,10 +34,10 @@ public class Ubicacion implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 3)
+    @Size(min = 1, max = 5)
     @Column(name = "COD_UBICACION")
     private String codUbicacion;
-    @Size(max = 3)
+    @Size(max = 5)
     @Column(name = "COD_UBICACION_PADRE")
     private String codUbicacionPadre;
     @Basic(optional = false)

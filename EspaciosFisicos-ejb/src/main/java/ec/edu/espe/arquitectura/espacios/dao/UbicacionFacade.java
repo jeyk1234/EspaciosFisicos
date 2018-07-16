@@ -33,7 +33,6 @@ public class UbicacionFacade extends AbstractFacade<Ubicacion> {
     }
     public List<Ubicacion> obtenerPorPadre(String codPadre)
     {
-        System.out.println(codPadre);
         Query q;
         if("c".equals(codPadre))
         {
