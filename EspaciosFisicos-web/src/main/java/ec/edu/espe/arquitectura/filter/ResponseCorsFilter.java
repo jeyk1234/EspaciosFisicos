@@ -5,14 +5,11 @@
  */
 package ec.edu.espe.arquitectura.filter;
 
-<<<<<<< HEAD
 /**
  *
  * @author edmarin
  */
 
-=======
->>>>>>> dfb52bae4296eff024309488203978b9beaa92fe
 import java.io.IOException;
 
 import javax.ws.rs.container.ContainerRequestContext;
