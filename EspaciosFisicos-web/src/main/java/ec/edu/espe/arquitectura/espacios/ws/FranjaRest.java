@@ -6,6 +6,7 @@
 package ec.edu.espe.arquitectura.espacios.ws;
 
 import ec.edu.espe.arquitectura.espacios.model.FranjaHoraria;
+<<<<<<< HEAD
 import ec.edu.espe.arquitectura.espacios.model.Horario;
 import ec.edu.espe.arquitectura.espacios.services.FranjaHorariaService;
 import java.util.List;
@@ -16,14 +17,25 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+=======
+import ec.edu.espe.arquitectura.espacios.services.FranjaHorariaService;
+import javax.ejb.EJB;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+>>>>>>> dfb52bae4296eff024309488203978b9beaa92fe
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+<<<<<<< HEAD
 /**
  *
  * @author edmarin
  */
+=======
+>>>>>>> dfb52bae4296eff024309488203978b9beaa92fe
 @Path("franja")
 public class FranjaRest {
     @EJB(beanName = "FranjaHorariaService")
@@ -36,6 +48,7 @@ public class FranjaRest {
         
        return Response.ok(service.obtenerTodos()).build();
     }
+<<<<<<< HEAD
     @GET
     @Path("dia/{dia}")
     @Produces({MediaType.APPLICATION_JSON+";charset=utf-8"})
@@ -52,6 +65,9 @@ public class FranjaRest {
        return Response.ok(service.obtenerTodos()).build();
     }
     */
+=======
+    
+>>>>>>> dfb52bae4296eff024309488203978b9beaa92fe
     @PUT
     @Produces({MediaType.APPLICATION_JSON+";charset=utf-8"})
     @Consumes({MediaType.APPLICATION_JSON+";charset=utf-8"})
@@ -60,13 +76,18 @@ public class FranjaRest {
         try
         {
             this.service.guardar(franja);
+<<<<<<< HEAD
             return Response.ok(Response.Status.CREATED).build();
+=======
+            return Response.ok().build();
+>>>>>>> dfb52bae4296eff024309488203978b9beaa92fe
         }catch(Exception ex)
         {
             System.out.println("Error" + ex.getMessage());
             return Response.serverError().build();
         }
     }
+<<<<<<< HEAD
     
     @POST
     @Produces({MediaType.APPLICATION_JSON + ";charset=utf-8"})
@@ -81,6 +102,8 @@ public class FranjaRest {
         }
     }
 
+=======
+>>>>>>> dfb52bae4296eff024309488203978b9beaa92fe
 
 
 }

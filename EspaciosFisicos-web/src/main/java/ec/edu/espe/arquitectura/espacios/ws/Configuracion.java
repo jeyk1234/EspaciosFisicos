@@ -8,10 +8,13 @@ package ec.edu.espe.arquitectura.espacios.ws;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
+<<<<<<< HEAD
 /**
  *
  * @author edmarin
  */
+=======
+>>>>>>> dfb52bae4296eff024309488203978b9beaa92fe
 @ApplicationPath("servicios")
 public class Configuracion  extends Application{
     
